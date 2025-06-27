@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-hi jib
+#hi jib, hi again
 
 # "8x8.dat" contains: T, E, E², M, M² (all normalized per spin)
 sim_filename = "8x8.dat"
