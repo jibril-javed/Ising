@@ -17,17 +17,25 @@ for i in times:
     energy, magnetisation = il.montecarlostep(temperature)
     E.append(energy)
     M.append(magnetisation)
-fig = plt.figure()
-matax = fig.add_subplot(3, 1, 1)
+
+# Create subplots using the modern approach
+fig, (matax, enerax, magax) = plt.subplots(3, 1, figsize=(8, 10))
+
+# Plot the lattice
 matax.matshow(il.lattice)
-enerax = fig.add_subplot(3, 1, 2)
+matax.set_title('Ising Lattice Final State')
+
+# Plot energy
 enerax.set_ylabel("Energy per spin")
 enerax.set_xlabel("Monte Carlo Steps")
 enerax.set_ylim([-2.1, 2.1])
-magax = fig.add_subplot(3, 1, 3)
+enerax.plot(times, np.array(E) / spins)
+
+# Plot magnetisation
 magax.set_ylabel("Magnetisation per spin")
 magax.set_xlabel("Monte Carlo Steps")
 magax.set_ylim([-1.1, 1.1])
-enerax.plot(times, np.array(E) / spins)
 magax.plot(times, np.array(M) / spins)
+
+plt.tight_layout()
 plt.show()
