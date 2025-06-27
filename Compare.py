@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+hi jib
+
 # "8x8.dat" contains: T, E, E², M, M² (all normalized per spin)
 sim_filename = "8x8.dat"
 sim_data = np.loadtxt(sim_filename)
